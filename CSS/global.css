@@ -318,14 +318,14 @@ header .active {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* height: auto; */
+    height: auto;
     gap: 1rem;
   }
   .heropage {
     background-position: left;
     background-size: cover;
     width: 100%;
-    /* height: auto; */
+    height: auto;
   }
   .heropage .heroheading {
     font-size: 29px;
