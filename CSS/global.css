@@ -123,7 +123,7 @@ header .active {
   font-weight: 700;
   line-height: 24.2px;
   text-align: left;
-  width: fit-content;
+  width: max-content;
   padding: 0.7rem 2rem;
   border-radius: 0.5rem;
   border: none;
@@ -236,6 +236,85 @@ header .active {
   width: 100%;
 }
 /* case study end */
+/* contactbg start */
+.contactbg {
+  /* background-image: url("../Assets/BG.svg"); */
+  background: linear-gradient(94.26deg, #4356e6 12.43%, #ff9393 89.55%);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 90vh;
+  padding: 2rem 9rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.contactright {
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 50%;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.formparent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.formparent input {
+  border: 1px solid #e6e8ec;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+}
+.contactleftinfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.flagparent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid white;
+  width: fit-content;
+  padding: 1rem 1.4rem;
+  border-radius: 5rem;
+  color: white;
+}
+.ctitle {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 60px;
+  text-align: left;
+  color: white;
+}
+.cdesc {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+  color: white;
+}
+.formtitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+}
+.formdesc {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+}
+/* contactbg end */
 /* footer container start */
 .footercontainer {
   padding: 2rem 9rem;
@@ -383,6 +462,22 @@ header .active {
     line-height: 28px;
   }
   /* get in touch banner end */
+  /* contact bg start */
+  .contactbg {
+    padding: 1rem 1rem;
+    height: auto;
+    flex-direction: column;
+  }
+  .contactleftinfo {
+    width: 100%;
+  }
+  .contactright {
+    width: 100%;
+  }
+  .flagparent {
+    font-size: 12px;
+  }
+  /* contact bg end */
   /* casestudy start */
   .casestudiescontainer {
     padding: 1rem 1rem;
