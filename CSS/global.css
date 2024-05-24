@@ -90,7 +90,7 @@ header .active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80vh;
+  height: auto;
   gap: 2rem;
 }
 .heropage .heroheading {
