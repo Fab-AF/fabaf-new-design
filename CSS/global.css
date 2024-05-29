@@ -131,11 +131,6 @@ header .active {
 }
 /* service we offer start */
 .servicecardparent {
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
@@ -165,116 +160,82 @@ header .active {
   text-align: center;
   color: #42526b;
 }
-.card {
-  position: relative;
-  width: 300px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card-image {
-  width: 100%;
-  height: auto;
-  transition: opacity 0.3s;
-  filter: brightness(0.5);
-}
-
-.card-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.card-content h2,
-.card-content .tags {
-  transition: opacity 0.3s;
-  opacity: 0;
-  color: white;
-  /* position: absolute; */
-  bottom: 2px;
-  left: 6%;
-  font-size: 1.1rem;
-  transition: all 0.4s ease 0s;
-  font-family: sans-serif;
-  transform: translate(0%, 0%);
-  top: 7%;
-  white-space: nowrap;
-}
-
-.card:hover .card-content h2,
-.card:hover .card-content .tags {
-  opacity: 1;
-}
-
-.card-content .hidden-content {
-  display: none;
-  transition: opacity 0.3s;
-}
-
-.card:hover .card-content .hidden-content {
-  display: block;
-  opacity: 1;
-}
-
-.card:hover .card-image {
-  opacity: 0.3;
-}
-
-.card-content h2 {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 18px;
-  text-align: left;
-
-  /* margin: 0;
-  font-size: 1.5em; */
-  color: white; /* Adjusted to blue */
-}
-
-.card-content .hidden-content {
-  font-size: 14px;
-  font-style: italic;
-  font-weight: 500;
-  line-height: 18px;
-  text-align: left;
-  color: black;
-}
-
-.tags {
-  margin-top: 10px;
-  display: flex;
+.superhero-container {
+  /* max-width: 1000px; */
+  margin: 0px auto;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-around; */
 }
 
-.tag {
-  font-family: Poppins;
-  font-size: 10px !important;
-  font-weight: 500;
-  line-height: 19px;
-  text-align: center;
-  background-color: rgb(0 0 0 / 20%);
-  /* border: 1px solid red; */
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin: 5px;
-  font-size: 0.9em;
-  color: white;
+.superhero-card {
+  position: relative;
+  /* margin: 20px 0; */
+  width: 300px;
+  height: 300px;
+  background: #fff;
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  transition: 1s;
+  box-shadow: inset 100px 0 50px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+}
+
+.superhero-card:hover {
+  z-index: 1111;
+  /* transform: perspective(2000px) rotate(-10deg); */
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.superhero-card .img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid #000; */
+  box-sizing: border-box;
+  transform-origin: left;
+  z-index: 1;
+  transition: 1s;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.superhero-card .img-container img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+.superhero-card:hover .img-container {
+  transform: rotateY(-135deg);
+}
+
+.superhero-card .card-details {
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  padding: 20px;
+  color: #000;
+}
+
+.superhero-card .card-details > h2 {
+  margin: 0;
+  padding: 0.5em 0;
+  text-transform: uppercase;
+  font-size: 2em;
+  color: #ed363a;
+}
+
+.superhero-card .card-details p {
+  margin: 0;
+  padding: 0;
+  line-height: 25px;
+  font-size: 1.1em;
 }
 /* technology we work start */
 .technologyweworkcontainer {
@@ -358,12 +319,13 @@ header .active {
 
 /* dev procees end */
 /* industry we serve start */
+
 .industryweserve {
   background-color: #e6e9ee;
   width: 95%;
   margin: auto;
   border-radius: 1rem;
-  padding: 2rem 9rem;
+  padding: 2rem 2rem; /* Adjusted padding for smaller screens */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -393,13 +355,16 @@ header .active {
 .imagegalleryparent {
   width: 100%;
   display: flex;
+  flex-direction: column; /* Changed to column for mobile screens */
   align-items: center;
   justify-content: center;
 }
 
 .images {
   display: flex;
+  gap: 1rem;
 }
+
 .image-item > h2:first-child {
   font-size: 22px;
   font-weight: 700;
@@ -416,8 +381,8 @@ header .active {
   color: white;
 }
 .image-item {
-  width: 80px;
-  height: 400px;
+  width: 80px; /* Full width on mobile screens */
+  height: 400px; /* Adjusted height for smaller screens */
   background-image: url(/Assets/item1.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -426,23 +391,7 @@ header .active {
   border-radius: 20px;
   position: relative;
   cursor: pointer;
-  margin: 0.5rem;
-}
-
-.image-item:nth-child(2) {
-  background-image: url("/Assets/item1.png");
-}
-
-.image-item:nth-child(3) {
-  background-image: url("/Assets/item1.png");
-}
-
-.image-item:nth-child(4) {
-  background-image: url("/Assets/item1.png");
-}
-
-.image-item:nth-child(5) {
-  background-image: url("/Assets/item1.png");
+  margin: 0.5rem 0; /* Margin adjusted for vertical layout */
 }
 
 h2 {
@@ -458,8 +407,7 @@ h2 {
 }
 
 .image-item:hover {
-  width: 400px;
-  height: 400px;
+  width: 400px; /* Increased height on hover for mobile screens */
 }
 
 .image-item:hover h2:first-child {
@@ -494,6 +442,7 @@ h2 {
   transition: all 0.4s;
   background-image: linear-gradient(0deg, #e65b00, rgb(255 255 255 / 0%));
 }
+
 /* industry we serve end */
 /* testimonial container start */
 .testimonialcontainer {
@@ -932,15 +881,21 @@ h2 {
     padding: 1rem 1rem;
   }
   .imagegalleryparent {
-    overflow-x: scroll;
+    flex-direction: row;
   }
   .images {
-    display: flex;
-    /* width: 100%; */
-    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .image-item {
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
   }
   .image-item:hover {
-    width: 100%;
+    width: auto;
+    height: 350px;
   }
   /* get in touch bannerstart */
   .getintouchbannerparent {
@@ -1165,10 +1120,21 @@ h2 {
     padding: 1rem 1rem;
   }
   .imagegalleryparent {
-    overflow-x: scroll;
+    flex-direction: row;
+  }
+  .images {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .image-item {
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
   }
   .image-item:hover {
-    width: 100%;
+    width: auto;
+    height: 350px;
   }
 
   /* get in touch bannerstart */
